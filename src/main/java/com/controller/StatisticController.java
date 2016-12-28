@@ -14,10 +14,14 @@ public class StatisticController {
     private StudentDao studentDao;
 
     @RequestMapping(value = "/list")
-    public String getAllUsers(Model model){
+    public String getAllUsers(Model model) {
 
         model.addAttribute("students", studentDao.getAllUsers());
 
+        // Just to check GlobalExceptionHandlingClass
+        if (true) {
+            throw new NullPointerException();
+        }
         return "getAllStudents";
     }
 }

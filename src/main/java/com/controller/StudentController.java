@@ -5,6 +5,7 @@ import com.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,7 +25,7 @@ public class StudentController {
         return new ModelAndView("addStudent", "command", new Student());
     }
 
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    @RequestMapping(value = "/addd", method = RequestMethod.POST)
     public String addStudent(@ModelAttribute("SpringWeb") Student student,
                              ModelMap model) {
 
