@@ -11,8 +11,19 @@
         <property name="prefix" value="/WEB-INF/pages/"/>
     </bean>
 
+    <bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionMappings">
+            <map>
+                <entry key="NullPointerException" value="nullPointerEx"/>
+                <entry key="SQLException" value="sqlExc"/>
+            </map>
+        </property>
+    </bean>
+
     <mvc:annotation-driven/>
 
     <context:component-scan base-package="com"/>
+
+
 
 </beans>

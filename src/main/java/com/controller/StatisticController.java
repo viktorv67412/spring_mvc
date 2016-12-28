@@ -22,6 +22,7 @@ public class StatisticController {
         if (true) {
             throw new NullPointerException();
         }
+
         return "getAllStudents";
     }
 }
